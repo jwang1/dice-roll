@@ -68,7 +68,8 @@ class ViewController: UIViewController {
         
         diceImageView2ImgNbr = Int(arc4random_uniform(UInt32(6)))
         
-        allScores += diceImageView1ImgNbr + diceImageView2ImgNbr
+        // the random numbers are generated from 0 to 5 for image index array;  need to increase by one for each.
+        allScores += diceImageView1ImgNbr + 1 + diceImageView2ImgNbr + 1
         
         scoreLabel.text = String(allScores)
         
