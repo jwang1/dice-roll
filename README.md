@@ -9,4 +9,4 @@ Added some extras :
 
 UI
 
-![alt text](finalProduct.png)
+![alt text](Assets.xcassets/finalProduct.imageset/finalProduct.png)
