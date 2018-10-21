@@ -51,9 +51,9 @@ class ViewController: UIViewController {
         
         scoreLabel.text = String(allScores)
         
-        diceImageView1.image = UIImage(named: imageNameArray[diceImageView1ImgNbr] + ".png")
+        diceImageView1.image = UIImage(named: imageNameArray[diceImageView1ImgNbr])
         
-        diceImageView2.image = UIImage(named: imageNameArray[diceImageView2ImgNbr] + ".png")
+        diceImageView2.image = UIImage(named: imageNameArray[diceImageView2ImgNbr])
         
     }
     
