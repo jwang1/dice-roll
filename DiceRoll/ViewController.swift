@@ -30,6 +30,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        resetGame(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,6 +45,25 @@ class ViewController: UIViewController {
         
         rollsLabel.text = String(nbrRolls)
         
+        randomizeDiceImages()
+    }
+    
+    @IBAction func resetGame(_ sender: Any) {
+        randomizeDiceImages()
+        
+        nbrRolls = 0
+        
+        allScores = 0
+        
+        nbrRolls = 0
+        
+        scoreLabel.text = "0"
+        
+        rollsLabel.text = "0"
+
+    }
+    
+    func randomizeDiceImages() -> Void {
         diceImageView1ImgNbr = Int(arc4random_uniform(UInt32(6)))
         
         diceImageView2ImgNbr = Int(arc4random_uniform(UInt32(6)))
@@ -54,25 +75,6 @@ class ViewController: UIViewController {
         diceImageView1.image = UIImage(named: imageNameArray[diceImageView1ImgNbr])
         
         diceImageView2.image = UIImage(named: imageNameArray[diceImageView2ImgNbr])
-        
-    }
-    
-    
-    @IBAction func resetGame(_ sender: Any) {
-        
-        nbrRolls = 0
-        
-        allScores = 0
-        
-        nbrRolls = 0
-        
-        scoreLabel.text = "0"
-        
-        rollsLabel.text = "0"
-        
-        diceImageView1.image = UIImage(named: "dice1.png")
-        diceImageView2.image = UIImage(named: "dice1.png")
-
     }
     
     
