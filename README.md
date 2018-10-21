@@ -9,4 +9,4 @@ Added some extras :
 
 UI
 
-![alt text](Assets.xcassets/finalProduct.imageset/finalProduct.png)
+![alt text](DiceRoll/Assets.xcassets/finalProduct.imageset/finalProduct.png)
