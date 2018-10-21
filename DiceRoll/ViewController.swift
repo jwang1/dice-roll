@@ -25,6 +25,8 @@ class ViewController: UIViewController {
     
     var allScores : Int = 0
     
+    let imageNameArray = ["dice1", "dice2", "dice3", "dice4", "dice5", "dice6"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -41,17 +43,17 @@ class ViewController: UIViewController {
         
         rollsLabel.text = String(nbrRolls)
         
-        diceImageView1ImgNbr = Int(arc4random_uniform(UInt32(6))) + 1
+        diceImageView1ImgNbr = Int(arc4random_uniform(UInt32(6)))
         
-        diceImageView2ImgNbr = Int(arc4random_uniform(UInt32(6))) + 1
+        diceImageView2ImgNbr = Int(arc4random_uniform(UInt32(6)))
         
         allScores += diceImageView1ImgNbr + diceImageView2ImgNbr
         
         scoreLabel.text = String(allScores)
         
-        diceImageView1.image = UIImage(named: "dice" + String(diceImageView1ImgNbr) + ".png")
+        diceImageView1.image = UIImage(named: imageNameArray[diceImageView1ImgNbr] + ".png")
         
-        diceImageView2.image = UIImage(named: "dice" + String(diceImageView2ImgNbr) + ".png")
+        diceImageView2.image = UIImage(named: imageNameArray[diceImageView2ImgNbr] + ".png")
         
     }
     
