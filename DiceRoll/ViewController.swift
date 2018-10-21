@@ -13,6 +13,17 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var diceImageView2: UIImageView!
     
+    @IBOutlet weak var scoreLabel: UILabel!
+    
+    @IBOutlet weak var rollsLabel: UILabel!
+    
+    var diceImageView1ImgNbr = 1
+    
+    var diceImageView2ImgNbr = 1
+
+    var nbrRolls : Int = 0
+    
+    var allScores : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +37,42 @@ class ViewController: UIViewController {
 
     @IBAction func rollDice(_ sender: Any) {
         
+        nbrRolls += 1
+        
+        rollsLabel.text = String(nbrRolls)
+        
+        diceImageView1ImgNbr = Int(arc4random_uniform(UInt32(6))) + 1
+        
+        diceImageView2ImgNbr = Int(arc4random_uniform(UInt32(6))) + 1
+        
+        allScores += diceImageView1ImgNbr + diceImageView2ImgNbr
+        
+        scoreLabel.text = String(allScores)
+        
+        diceImageView1.image = UIImage(named: "dice" + String(diceImageView1ImgNbr) + ".png")
+        
+        diceImageView2.image = UIImage(named: "dice" + String(diceImageView2ImgNbr) + ".png")
+        
     }
+    
+    
+    @IBAction func resetGame(_ sender: Any) {
+        
+        nbrRolls = 0
+        
+        allScores = 0
+        
+        nbrRolls = 0
+        
+        scoreLabel.text = "0"
+        
+        rollsLabel.text = "0"
+        
+        diceImageView1.image = UIImage(named: "dice1.png")
+        diceImageView2.image = UIImage(named: "dice1.png")
+
+    }
+    
     
 }
 
